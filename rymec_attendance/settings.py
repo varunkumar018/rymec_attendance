@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'attendance_app',
     'users',
+    'corsheaders',
     
 ]
 
@@ -54,6 +55,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
+
 # JWT settings
 SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False,
@@ -66,6 +68,12 @@ SWAGGER_SETTINGS = {
         },
     },
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173", 
+]
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=100),
@@ -107,6 +115,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
