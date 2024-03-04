@@ -135,4 +135,4 @@ class AttendanceFilterView(generics.ListAPIView):
 
     queryset = Attendance.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['subject', 'date']  # Define fields for filtering
+    filterset_fields = ['branch', 'batch', 'sem', 'sec', 'subject', 'date']  # Define fields for filtering

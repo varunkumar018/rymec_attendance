@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'attendance_app',
     'users',
     'corsheaders',
+    'django_filters',
     
 ]
 
